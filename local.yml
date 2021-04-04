@@ -18,11 +18,15 @@
       group: root
 
   - name: set wallpaper
-    dconf:
-      key: "/org/gnome/desktop/background/picture-uri"
+    xfconf:
+      channel: "xfce4-desktop"
+      property: "/backdrop/screen0/monitoreDP1/workspace0/last-image
+      value_type: string
       value: "'file://usr/share/backgrounds/ansible-wallpaper.jpg'"
 
   - name: set wallpaper position
-    dconf:
-      key: "/org/gnome/desktop/background/picture-options"
-      value: "'zoom'"
+    xfconf:
+      channel: "xfce4-desktop"
+      property: "/backdrop/screen0/monitoreDP1/workspace0/image-style"
+      value-type: "int"
+      value: "5"
